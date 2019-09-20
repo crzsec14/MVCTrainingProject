@@ -1,0 +1,63 @@
+﻿@model TrackingSystem.Data.Models.User
+
+@{
+    ViewBag.Title = "Details";
+}
+<div>
+    <div style="margin-top: 3%">
+        <h4>User Details</h4>
+    </div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+
+        @*<dt>
+                @Html.DisplayNameFor(model => model.Password)
+            </dt>*@
+
+        @*<dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>*@
+        <dt>
+            @Html.DisplayNameFor(model => model.UserType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Attempts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Attempts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Update", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

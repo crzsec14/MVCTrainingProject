@@ -1,0 +1,74 @@
+﻿@model TrackingSystem.Data.Models.User
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Auth/_LoginLayout.cshtml";
+}
+<style>
+    .card {
+        top: 20%;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    }
+
+    .card-body {
+        text-align: left;
+    }
+    .card-header{
+        font-weight:700;
+    }
+    .card-title{
+        font-family:r;
+        font-weight: 800;
+        text-align: center;
+        font-
+    }
+    .card-footer{
+        color: #808080;        
+    }
+    .btn {
+        margin-top: 3%;
+    }
+</style>
+
+@using (@Html.BeginForm())
+{
+
+    <div class="row justify-content-sm-center">
+        <div class="col-md-4">
+            <div class="card border-info">
+                <div class="card-header">
+                    Sign in to continue
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">MVC Training</h4>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            @Html.EditorFor(usr => usr.Username, new { htmlAttributes = new { @placeholder = "Username", @class = "form-control" } })
+                            @Html.ValidationMessageFor(usr => usr.Username, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            @Html.EditorFor(usr => usr.Password, new { htmlAttributes = new { @placeholder = "Password", @class = "form-control" } })
+                            @Html.ValidationMessageFor(usr => usr.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input class="btn btn-primary btn-block" value="Sign in" type="submit" />
+                        </div>
+                    </div>
+                    <div style="text-align: center">@Html.ActionLink("Log in with Facebook", "LoginFacebook")</div>
+                </div>
+                <div class="card-footer">
+                    Don't have an account? Please contact your Administrator
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+@section scripts{
+    <script type="text/javascript">
+        @Html.Raw(ViewBag.SweetAlertShowMessage)
+    </script>
+}
